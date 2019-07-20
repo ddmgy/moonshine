@@ -164,6 +164,13 @@ would first disable the boxblur and filmgrain effect, and then enable the
 filmgrain again.
 Note that the effects are still in the chain, they are only not drawn.
 
+Effects can also be toggled between enabled/disabled states with `chain.toggle(names...)`.
+For example, using effect from above (with boxblur disabled and filmgrain enabled)
+```lua
+effect.toggle("boxblur", "filmgrain")
+```
+would enable to boxblur effect and disable the filmgrain effect.
+
 ### Canvas size
 
 You can change the size of the internal canvas, for example when the window was
@@ -386,7 +393,7 @@ moonshine.effects.godsray
 
 Name | Type | Default
 -----|------|--------
-exposire | number between 0 and 1 | 0.5
+exposure | number between 0 and 1 | 0.5
 decay | number between 0 and 1 | 0.95
 density | number between 0 and 1 | 0.05
 weight | number between 0 and 1 | 0.5

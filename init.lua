@@ -114,6 +114,17 @@ moonshine.chain = function(w,h,effect)
     end
   end
 
+  chain.toggle = function(name, ...)
+    if name then
+      if disabled[name] ~= nil then
+        disabled[name] = nil
+      else
+        disabled[name] = name
+      end
+      return chain.toggle(...)
+    end
+  end
+
   setmetatable(chain, {
     __call = function(_, ...) return chain.draw(...) end,
     __index = function(_,k)
